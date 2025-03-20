@@ -1,0 +1,174 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents scrolling on the entire page */
+}
+
+.online-bookstore {
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #2c3e50 !important;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fixes navbar at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensures navbar stays on top */
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff !important;
+}
+
+/* Cart Button */
+.cart-button {
+    background-color: #1abc9c;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.cart-button:hover {
+    background-color: #16a085;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #ff4757;
+    color: white;
+    border-radius: 50%;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #34495e;
+    padding: 2rem;
+    color: #ffffff;
+    width: 250px; /* Fixed width for sidebar */
+    position: fixed; /* Fixes sidebar */
+    top: 70px; /* Adjusted for navbar height */
+    bottom: 0; /* Stretches to the bottom */
+    overflow-y: auto; /* Allows scrolling if content exceeds height */
+}
+
+/* Book List - Scrollable */
+.book-container {
+    flex: 1;
+    overflow-y: auto; /* Enables vertical scrolling */
+    padding: 2rem;
+    background-color: #f4f4f9; /* Light background for contrast */
+    margin-left: 250px; /* Adjusted for sidebar width */
+    margin-top: 70px; /* Adjusted for navbar height */
+    height: calc(100vh - 70px); /* Ensures it fits within the viewport */
+}
+
+/* FIX: Prevent horizontal scroll issues */
+.main-content {
+    display: flex;
+    flex-direction: row; /* Sidebar and book container side by side */
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden; /* Ensures no horizontal scrolling */
+}
+
+/* Book Cards */
+.card {
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1rem; /* Adds spacing between cards */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+}
+
+.card-text {
+    color: #7f8c8d;
+    margin-bottom: 0.5rem;
+}
+
+.card-price {
+    color: #1abc9c;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Footer Fix */
+.footer {
+    margin-top: auto;
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: static; /* Sidebar becomes part of the flow */
+        height: auto; /* Adjust height for mobile */
+    }
+
+    .book-container {
+        margin-left: 0; /* Reset margin for mobile */
+        margin-top: 70px; /* Maintain space for navbar */
+        height: calc(100vh - 70px); /* Ensure scrolling works properly */
+    }
+
+    .main-content {
+        flex-direction: column; /* Stack sidebar and book container vertically */
+    }
+}
